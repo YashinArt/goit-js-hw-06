@@ -15,20 +15,31 @@ const images = [
 
 const imagesEl = document.querySelector(".gallery")
 
+const image = ({ url, alt }) => {
+  return `<li class="list"><img class="img__width" src = ${url} alt = '${alt}' width="320"></li>`;
+};
 
-const imagesElMap = images.map((image)=>{
+const imagesElMap = images.map(image).join('');
+console.log(image);
+
+imagesEl.insertAdjacentHTML('beforebegin', imagesElMap);
+
+
+
+// =>{
   
-  const imageElli = document.createElement('li');
-  const imageElamg = document.createElement('img');
-  imageElamg.src = image.url;
-  imageElamg.alt =image.alt;
-  imageElamg.width = '250';
+//   // const imageElli = document.createElement('li');
+//   // const imageElamg = document.createElement('img');
+//   // imageElamg.src = image.url;
+//   // imageElamg.alt =image.alt;
+//   // imageElamg.width = '250';
   
-  imageElli.append(imageElamg)
-  imagesEl.append(imageElli)
-  imageElli.insertAdjacentHTML('beforebegin', imageElamg.alt);
-  console.log(imagesEl);
-});
+//   imageElli.append(imageElamg)
+//   imagesEl.append(imageElli)
+//   imageElli.insertAdjacentHTML('beforebegin', imageElamg.alt);
+//   console.log(imagesEl);
+// });
+
 
 
 
